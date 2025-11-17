@@ -1,0 +1,124 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  font-family: sans-serif;
+  transition: background-color 0.5s linear;
+}
+
+/* Top-left label */
+.label {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 20;
+  mix-blend-mode: difference;
+  user-select: none;
+}
+
+/* Scattered words — NOW part of the scroll */
+.word {
+  position: absolute; /* <-- FIXED: was 'fixed' before */
+  font-size: 4rem;
+  font-weight: 700;
+  z-index: 10; 
+  color: white;
+  opacity: 0.8;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+
+/* optional glitchy text effects */
+.glitch {
+  animation: glitch 0.4s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(1px, -1px); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, 0px); }
+  75% { transform: translate(-1px, -2px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* Scroll container */
+.scroll-container {
+  display: flex;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  background: transparent;
+  position: relative;
+}
+
+.section {
+  flex: 0 0 2000vw;
+  height: 100vh;
+  position: relative;
+}
+
+.digital { background: transparent; }
+.analog { background: transparent; }
+
+/* Video style */
+video {
+  object-fit: cover;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.2s ease;
+  border-radius: 8px;
+  aspect-ratio: 9/16;
+}
+
+/* DIGITAL VIDEO POSITIONS (high up + alternate 1vh, 3vh, 5vh) */
+#vid1  { top: 1vh;  left: 100px;   width: 30vw; }
+#vid2  { top: 3vh;  left: 500px;   width: 30vw; }
+#vid3  { top: 5vh;  left: 900px;   width: 30vw; }
+#vid4  { top: 1vh;  left: 1300px;  width: 30vw; }
+#vid5  { top: 3vh;  left: 1700px;  width: 30vw; }
+#vid6  { top: 5vh;  left: 2100px;  width: 30vw; }
+#vid7  { top: 1vh;  left: 2500px;  width: 30vw; }
+#vid8  { top: 3vh;  left: 2900px;  width: 30vw; }
+#vid9  { top: 5vh;  left: 3300px;  width: 30vw; }
+#vid10 { top: 1vh;  left: 3700px;  width: 30vw; }
+#vid11 { top: 3vh;  left: 4100px;  width: 30vw; }
+#vid12 { top: 5vh;  left: 4500px;  width: 30vw; }
+#vid13 { top: 1vh;  left: 4900px;  width: 30vw; }
+#vid14 { top: 3vh;  left: 5300px;  width: 30vw; }
+#vid15 { top: 5vh;  left: 5700px;  width: 30vw; }
+#vid16 { top: 1vh;  left: 6100px;  width: 30vw; }
+#vid17 { top: 3vh;  left: 6500px;  width: 30vw; }
+#vid18 { top: 5vh;  left: 6900px;  width: 30vw; }
+#vid19 { top: 1vh;  left: 7300px;  width: 30vw; }
+#vid20 { top: 3vh;  left: 7700px;  width: 30vw; }
+#vid21 { top: 5vh;  left: 8100px;  width: 30vw; }
+#vid22 { top: 1vh;  left: 8500px;  width: 30vw; }
+#vid23 { top: 3vh;  left: 8900px;  width: 30vw; }
+#vid24 { top: 5vh;  left: 9300px;  width: 30vw; }
+#vid25 { top: 1vh;  left: 9700px;  width: 30vw; }
+#vid26 { top: 3vh;  left: 10100px; width: 30vw; }
+#vid27 { top: 5vh;  left: 10500px; width: 30vw; }
+#vid28 { top: 1vh;  left: 10900px; width: 30vw; }
+#vid29 { top: 3vh;  left: 11300px; width: 30vw; }
+#vid30 { top: 5vh;  left: 11700px; width: 30vw; }
+#vid31 { top: 1vh;  left: 12100px; width: 30vw; }
+#vid32 { top: 3vh;  left: 12500px; width: 30vw; }
+#vid33 { top: 5vh;  left: 12900px; width: 30vw; }
+#vid34 { top: 1vh;  left: 13300px; width: 30vw; }
+#vid35 { top: 3vh;  left: 13700px; width: 30vw; }
+#vid36 { top: 5vh;  left: 14100px; width: 30vw; }
+
+
+
+
+/* ANALOG VIDEO POSITIONS */
+#a1 { top: 200px; left: 10000px; width: 20vw; }
+#a2 { top: 400px; left: 11000px; width: 20vw; }
+#a3 { top: 100px; left: 12000px; width: 20vw; }
+#a4 { top: 250px; left: 13000px; width: 20vw; }

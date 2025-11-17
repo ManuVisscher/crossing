@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Noise to Calm</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="label">Scroll → Click once to enable sound</div>
+
+  <div class="scroll-container" id="scrollContainer">
+
+    <!-- DIGITAL -->
+    <div class="section digital">
+
+      <!-- scattered text NOW inside the scroll -->
+      <div class="word glitch" style="top: 20vh; left: 100vw;">Loneliness</div>
+      <div class="word glitch" style="top: 60vh; left: 200vw;">Overstimulation</div>
+      <div class="word glitch" style="top: 30vh; left: 150vw;">Depression</div>
+      <div class="word glitch" style="top: 70vh; left: 400vw;">Anxiety</div>
+      <div class="word glitch" style="top: 40vh; left: 700vw;">Doomscrolling</div>
+        <div class="word glitch" style="top: 20vh; left: 100vw;">Emptiness</div>
+      <div class="word glitch" style="top: 60vh; left: 200vw;">Restlessness</div>
+      <div class="word glitch" style="top: 30vh; left: 150vw;">Numbness</div>
+      <div class="word glitch" style="top: 70vh; left: 400vw;">Irritability</div>
+      <div class="word glitch" style="top: 40vh; left: 700vw;">Fomo</div>
+       <div class="word glitch" style="top: 20vh; left: 100vw;">Self-doubt</div>
+      <div class="word glitch" style="top: 60vh; left: 200vw;">Disconnection</div>
+      <div class="word glitch" style="top: 30vh; left: 150vw;">Brain-fog</div>
+      <div class="word glitch" style="top: 70vh; left: 400vw;">Comparison</div>
+      <div class="word glitch" style="top: 40vh; left: 700vw;">Isolation</div>
+
+
+      <!-- your 36 videos unchanged -->
+      <video id="vid1" src="digital/digital1.mp4" autoplay loop muted></video>
+      <video id="vid2" src="digital/digital2.mp4" autoplay loop muted></video>
+      <video id="vid3" src="digital/digital3.mp4" autoplay loop muted></video>
+      <video id="vid4" src="digital/digital4.mp4" autoplay loop muted></video>
+      <video id="vid5" src="digital/digital5.mp4" autoplay loop muted></video>
+      <video id="vid6" src="digital/digital6.mp4" autoplay loop muted></video>
+      <video id="vid7" src="digital/digital7.mp4" autoplay loop muted></video>
+      <video id="vid8" src="digital/digital8.mp4" autoplay loop muted></video>
+      <video id="vid9" src="digital/digital9.mp4" autoplay loop muted></video>
+      <video id="vid10" src="digital/digital10.mp4" autoplay loop muted></video>
+      <video id="vid11" src="digital/digital11.mp4" autoplay loop muted></video>
+      <video id="vid12" src="digital/digital12.mp4" autoplay loop muted></video>
+      <video id="vid13" src="digital/digital13.mp4" autoplay loop muted></video>
+      <video id="vid14" src="digital/digital14.mp4" autoplay loop muted></video>
+      <video id="vid15" src="digital/digital15.mp4" autoplay loop muted></video>
+      <video id="vid16" src="digital/digital16.mp4" autoplay loop muted></video>
+      <video id="vid17" src="digital/digital17.mp4" autoplay loop muted></video>
+      <video id="vid18" src="digital/digital18.mp4" autoplay loop muted></video>
+      <video id="vid19" src="digital/digital19.mp4" autoplay loop muted></video>
+      <video id="vid20" src="digital/digital20.mp4" autoplay loop muted></video>
+      <video id="vid21" src="digital/digital21.mp4" autoplay loop muted></video>
+      <video id="vid22" src="digital/digital22.mp4" autoplay loop muted></video>
+      <video id="vid23" src="digital/digital23.mp4" autoplay loop muted></video>
+      <video id="vid24" src="digital/digital24.mp4" autoplay loop muted></video>
+      <video id="vid25" src="digital/digital25.mp4" autoplay loop muted></video>
+      <video id="vid26" src="digital/digital26.mp4" autoplay loop muted></video>
+      <video id="vid27" src="digital/digital27.mp4" autoplay loop muted></video>
+      <video id="vid28" src="digital/digital28.mp4" autoplay loop muted></video>
+      <video id="vid29" src="digital/digital29.mp4" autoplay loop muted></video>
+      <video id="vid30" src="digital/digital30.mp4" autoplay loop muted></video>
+      <video id="vid31" src="digital/digital31.mp4" autoplay loop muted></video>
+      <video id="vid32" src="digital/digital32.mp4" autoplay loop muted></video>
+      <video id="vid33" src="digital/digital33.mp4" autoplay loop muted></video>
+      <video id="vid34" src="digital/digital34.mp4" autoplay loop muted></video>
+      <video id="vid35" src="digital/digital35.mp4" autoplay loop muted></video>
+      <video id="vid36" src="digital/digital36.mp4" autoplay loop muted></video>
+    </div>
+
+    <!-- ANALOG -->
+    <div class="section analog">
+      <video id="a1" src="analog/analog1.mp4" autoplay loop muted></video>
+      <video id="a2" src="analog/analog2.mp4" autoplay loop muted></video>
+      <video id="a3" src="analog/analog3.mp4" autoplay loop muted></video>
+      <video id="a4" src="analog/analog4.mp4" autoplay loop muted></video>
+    </div>
+
+  </div>
+
+  <script>
+    const container = document.getElementById('scrollContainer');
+    const videos = document.querySelectorAll('video');
+    const label = document.querySelector('.label');
+
+    // enable audio on first click
+    window.addEventListener('click', () => {
+      videos.forEach(v => {
+        v.muted = false;
+        v.play().catch(() => {});
+      });
+    });
+
+    function isOnScreen(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.right > 0 && rect.left < window.innerWidth;
+    }
+
+    container.addEventListener('scroll', () => {
+      const centerX = window.innerWidth / 2;
+      const totalWidth = container.scrollWidth - window.innerWidth;
+      const scrollRatio = container.scrollLeft / totalWidth;
+
+      const fadeStart = 0.4;
+      let fadeRatio = (scrollRatio - fadeStart) / (1 - fadeStart);
+      fadeRatio = Math.min(Math.max(fadeRatio, 0), 1);
+      const colorValue = Math.floor(fadeRatio * 255);
+      document.body.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+      label.style.color = colorValue > 128 ? 'black' : 'white';
+
+      videos.forEach(video => {
+        const rect = video.getBoundingClientRect();
+        const videoCenter = rect.left + rect.width / 2;
+        const distance = Math.abs(centerX - videoCenter);
+        const maxDist = window.innerWidth / 2;
+        const fade = Math.max(0, 1 - distance / maxDist);
+
+        const minVolume = 0.25;
+        const maxVolume = 0.9;
+        video.volume = Math.max(minVolume, fade * maxVolume);
+
+        video.style.opacity = 0.5 + fade * 0.5;
+        video.style.transform = `scale(${0.9 + fade * 0.1})`;
+
+        if (isOnScreen(video)) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
